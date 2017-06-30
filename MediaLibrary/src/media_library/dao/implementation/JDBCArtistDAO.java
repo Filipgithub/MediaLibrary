@@ -53,7 +53,6 @@ public class JDBCArtistDAO implements ArtistDAO{
 			ResultSet keys = addStm.getGeneratedKeys();
 			keys.next();
 			int key = keys.getInt(1);
-
 			a.setID(key);
 
 		} catch (SQLException e) {
