@@ -171,7 +171,11 @@ ALTER TABLE ONLY "Song" ALTER COLUMN "ID" SET DEFAULT nextval('"Song_ID_seq"'::r
 COPY "Album" ("ID", album_name, album_publisher, year_of_publishing, "artist_ID") FROM stdin;
 20	Acoustic Live in Newcastle 	The Soul Cages	1991	1
 21	Acoustic Live in Newcastle 	The Soul Cages	1991	1
-22	Acoustic Live in Newcastle 	The Soul Cages	1991	1
+23	Acoustic Live in Newcastle 	The Soul Cages	1991	1
+25	Acoustic Live in Newcastle 	The Soul Cages	1991	1
+26	Acoustic Live in Newcastle 	The Soul Cages	1991	1
+27	Acoustic Live in Newcastle 	The Soul Cages	1991	1
+22	Some new album name!	The Soul Cages	1991	1
 \.
 
 
@@ -179,7 +183,7 @@ COPY "Album" ("ID", album_name, album_publisher, year_of_publishing, "artist_ID"
 -- Name: Album_ID_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"Album_ID_seq"', 22, true);
+SELECT pg_catalog.setval('"Album_ID_seq"', 27, true);
 
 
 --
@@ -191,6 +195,18 @@ COPY "Artist" ("ID", first_name, last_name, artist_name) FROM stdin;
 9	Gordon Matthew Thomas	Sumner	String
 10	Gordon Matthew Thomas	Sumner	String
 11	Gordon Matthew Thomas	Sumner	String
+12	Gordon Matthew Thomas	Sumner	String
+13	Gordon Matthew Thomas	Sumner	String
+17	Gordon Matthew Thomas	Sumner	String
+29	Gordon Matthew Thomas	Sumner	String
+31	Gordon Matthew Thomas	Sumner	String
+32	Gordon Matthew Thomas	Sumner	String
+34	Gordon Matthew Thomas	Sumner	String
+36	Gordon Matthew Thomas	Sumner	String
+37	Gordon Matthew Thomas	Sumner	String
+38	Gordon Matthew Thomas	Sumner	String
+30	Gordon Matthew Thomas	Sumner	Some new artist name!
+35	Gordon Matthew Thomas	Sumner	Some new artist name!
 \.
 
 
@@ -198,7 +214,7 @@ COPY "Artist" ("ID", first_name, last_name, artist_name) FROM stdin;
 -- Name: Artist_ID_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"Artist_ID_seq"', 11, true);
+SELECT pg_catalog.setval('"Artist_ID_seq"', 38, true);
 
 
 --
@@ -206,7 +222,10 @@ SELECT pg_catalog.setval('"Artist_ID_seq"', 11, true);
 --
 
 COPY "Song" ("ID", title, duration, song_writer, genre, "artist_ID", "album_ID") FROM stdin;
-10	Mad About You	3.1400000000000001	Sting	Jazz,Pop	1	20
+11	Mad About You	3.1400000000000001	Sting	Jazz,Pop	1	20
+12	Mad About You	3.1400000000000001	Sting	Jazz,Pop	1	21
+14	Mad About You	3.1400000000000001	Sting	Jazz,Pop	1	21
+13	Mad About You	3.1400000000000001	Some new song writer name!	Jazz,Pop	1	21
 \.
 
 
@@ -214,7 +233,7 @@ COPY "Song" ("ID", title, duration, song_writer, genre, "artist_ID", "album_ID")
 -- Name: Song_ID_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"Song_ID_seq"', 10, true);
+SELECT pg_catalog.setval('"Song_ID_seq"', 14, true);
 
 
 --
